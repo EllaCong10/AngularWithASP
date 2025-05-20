@@ -1,0 +1,30 @@
+<div class="login-container">
+  <h2>登录</h2>
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <div>
+      <label for="email">邮箱</label>
+      <input type="email"
+             id="email"
+             required
+             name="email"
+             [(ngModel)]="email"
+             #emailInput="ngModel" />
+      <div *ngIf="emailInput.invalid && emailInput.touched">请输入有效邮箱</div>
+    </div>
+
+    <div>
+      <label for="password">密码</label>
+      <input type="password"
+             id="password"
+             required
+             name="password"
+             [(ngModel)]="password"
+             #passwordInput="ngModel" />
+      <div *ngIf="passwordInput.invalid && passwordInput.touched">请输入密码</div>
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">登录</button>
+
+    <div *ngIf="loginFailed" style="color:red;">登录失败，请重试</div>
+  </form>
+</div>
