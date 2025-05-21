@@ -84,8 +84,10 @@
 }
 
 .icon {
-  text-align: center;
-  margin: 10px;
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  gap: 8px; /* 图片与文字的间距，可调 */
+  margin-bottom: 10px; /* 控制图标块之间的间距 */
 }
 
   .icon img {
